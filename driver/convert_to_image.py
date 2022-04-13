@@ -1,3 +1,6 @@
+from pyrogram.types import Message
+
+
 async def convert_to_image(message, client) -> Union[None, str]:
     """
     Convert Most Media Formats To Raw Image
