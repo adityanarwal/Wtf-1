@@ -1,3 +1,9 @@
+import os
+
+from telegraph import Telegraph
+from pyrogram.types import Message
+
+
 from pyrogram import Client
 from pyrogram.types import Message
 
