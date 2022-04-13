@@ -1,6 +1,6 @@
 import os
 
-from telegraph import Telegraph
+
 from pyrogram.types import Message
 
 
