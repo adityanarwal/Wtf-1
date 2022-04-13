@@ -4,6 +4,7 @@ from pyrogram.types import Message
 from config import BOT_USERNAME
 from driver.filters import command
 from driver.convert_to_image import convert_to_image
+from driver.get_file_id import get_file_id
 
 
 @nexaub.on_cmd(command=["telegraph", "tgraph"])
