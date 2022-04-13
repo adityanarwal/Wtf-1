@@ -12,6 +12,7 @@ from driver.filters import command
 from driver.error import nexaub, e_or_r
 from driver.convert_to_image import convert_to_image
 from driver.get_arg import get_arg
+from config import Config
 
 
 # Telegraph client
