@@ -7,9 +7,9 @@ from driver.convert_to_image import convert_to_image
 from driver.get_arg import get_arg
 
 
-@nexaub.on_cmd(command=["telegraph", "tgraph"])
+@nexaub.on_message(command(["telegraph", f"telegraph@{BOT_USERNAME}"]))
 async def telegraph_up(_, message: Message):
-    tgraph_msg = await e_or_r(nexaub_message=message, msg_text="`Processing...`")
+    tgraph_msg = await e_or_r(nexaub_message=message, msg_text="𝟎% ■■■■■■■■■■ 𝟏𝟎𝟎%\n\nGenerating TeleGraph Link. Please wait !!")
     r_msg = message.reply_to_message
     arg_txt = get_arg(message)
     if r_msg:
@@ -36,4 +36,4 @@ async def telegraph_up(_, message: Message):
       # Edit message with the telegraph link
       await tgraph_msg.edit(f"**Telegraph Link:** {t_pasted}")
     else:
-      return await tgraph_msg.edit("Reply to a message that contains `text`/`image` or `mp4 file`!")
+      return await tgraph_msg.edit("**Reply to a message that contains Text or Media.**")
