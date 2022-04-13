@@ -23,7 +23,7 @@ async def paste_text_to_tgraph(title, text):
     t_response = telegraph.create_page(title=title, html_content=text, author_name=f_name if f_name is not None else "Nexa-Userbot", author_url=f"https://t.me/{u_name}" if u_name is not None else "https://github.com/Itz-fork/Nexa-Userbot")
     return f"{t_response['url']}"
   except Exception as e:
-    return f"**Error:** {e}"
+    return f"𝐄𝐫𝐫𝐨𝐫 𝟒𝟎𝟒 !! Something went wrong, Please wait for developers to Fix It."
 
 # Upload media to telegraph
 async def upload_to_tgraph(file):
@@ -31,7 +31,7 @@ async def upload_to_tgraph(file):
     t_response = telegraph.upload_file(file)[0]["src"]
     return f"https://telegra.ph/{t_response}"
   except Exception as e:
-    return f"**Error:** {e}"
+    return f"𝐄𝐫𝐫𝐨𝐫 𝟒𝟎𝟒 !! Something went wrong, Please wait for developers to Fix It."
 
 
 @nexaub.on_message(command(["telegraph", f"telegraph@{BOT_USERNAME}"]))
