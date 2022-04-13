@@ -6,6 +6,31 @@ from driver.filters import command
 from driver.convert_to_image import convert_to_image
 from driver.get_arg import get_arg
 
+# Telegraph client
+telegraph = Telegraph()
+telegraph.create_account(short_name="Nexa-Userbot")
+
+# Paste text to telegraph
+async def paste_text_to_tgraph(title, text):
+  try:
+    nexaub_usr = await NEXAUB.get_me()
+    f_name = nexaub_usr.first_name
+    u_name = nexaub_usr.username
+    if not title:
+      title = f_name if f_name is not None else "By Nexa Userbot"
+    t_response = telegraph.create_page(title=title, html_content=text, author_name=f_name if f_name is not None else "Nexa-Userbot", author_url=f"https://t.me/{u_name}" if u_name is not None else "https://github.com/Itz-fork/Nexa-Userbot")
+    return f"{t_response['url']}"
+  except Exception as e:
+    return f"**Error:** {e}"
+
+# Upload media to telegraph
+async def upload_to_tgraph(file):
+  try:
+    t_response = telegraph.upload_file(file)[0]["src"]
+    return f"https://telegra.ph/{t_response}"
+  except Exception as e:
+    return f"**Error:** {e}"
+
 
 @nexaub.on_message(command(["telegraph", f"telegraph@{BOT_USERNAME}"]))
 async def telegraph_up(_, message: Message):
