@@ -1,3 +1,6 @@
+from pyrogram.types import Message
+
+
 # ================= MAIN ================= #
 # Log channel id
 log_cid_loop = asyncio.get_event_loop()
