@@ -1,3 +1,11 @@
+from pyrogram import Client
+from pyrogram.types import Message
+
+from config import BOT_USERNAME
+from driver.filters import command
+from driver.get_file_id import get_file_id
+
+
 @nexaub.on_cmd(command=["telegraph", "tgraph"])
 async def telegraph_up(_, message: Message):
     tgraph_msg = await e_or_r(nexaub_message=message, msg_text="`Processing...`")
