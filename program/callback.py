@@ -190,6 +190,7 @@ async def sudo_set(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""⚠️ Extra Commands List.
 
+» /telegraph - Generates the TeleGraph link of given media or text.
 » /eval - run an code
 » /sh - run an code
 » /id - Get id of a [Chat , User , Sticker]
